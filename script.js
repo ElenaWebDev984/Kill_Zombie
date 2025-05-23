@@ -25,3 +25,15 @@ soundBtn.onclick = function () {
         soundBtn.innerHTML = 'SOUND OFF'
     }
 }
+
+const hitImg = document.createElement('img');
+hitImg.src = 'images/blood.png';
+const hitCounter = document.getElementById('hit-counter');
+const shot = document.getElementById('sound-shot');
+zombieImg.onclick = function () {
+    hitCounter.innerHTML++
+    shot.currentTime = 0
+    shot.play()
+    zombieImg.remove()
+    items[randomIndex].append(hitImg);
+}
